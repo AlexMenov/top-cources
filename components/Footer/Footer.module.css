@@ -1,0 +1,57 @@
+.footer {
+  background-color: var(--primary);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  padding: 25px 30px;
+  display: grid;
+  gap: 40px;
+  grid-template:
+    "rights agreement confidentiality"
+    / 1fr auto auto;
+}
+.span {
+  position: relative;
+  overflow: hidden;
+}
+
+.span::before {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 2px;
+  background: var(--white);
+  top: 90%;
+  transform: translate(-100%);
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, color 0.3s linear;
+}
+.span:hover::before {
+  transform: translate(0);
+}
+
+.span:hover a {
+  color: var(--gray-hover);
+}
+
+.rights {
+  grid-area: rights;
+}
+.agreement {
+  grid-area: agreement;
+}
+.confidentiality {
+  grid-area: confidentiality;
+}
+
+@media (max-width: 765px) {
+  .footer {
+    gap: 10px 40px;
+    grid-template:
+      "rights"
+      "agreement"
+      "confidentiality"
+      / 1fr;
+  }
+}

@@ -24,11 +24,12 @@ export const Rating = ({ isEditable = false, rating, setRating, className, ...ot
                 })}
                 onMouseMove={() => handleChangeRatingMouse(index + 1)}
                 onMouseLeave={() => handleChangeRatingMouse(rating)}
-                onClick={() => handleChangeRatingClick(index + 1)}
+                onClick={() => handleChangeRatingClick(index + 1)} 
+                key={element + "index"}
             >
                 <RatingStar className={classnames({
                     [style.rated]: index < currentRating,
-                })} key={element + "index"}
+                })}
                     tabIndex={isEditable ? 0 : -1}
                     onKeyDown={(event: KeyboardEvent<SVGAElement>) => handleChangeRatingKeyDown(index + 1, event)}
                 />
@@ -56,8 +57,6 @@ export const Rating = ({ isEditable = false, rating, setRating, className, ...ot
     }
 
     return <div {...otherProps}>
-        {chosenRating.map((element: JSX.Element, index: number) => {
-            return element
-        })}
+        {chosenRating}
     </div>
 }
