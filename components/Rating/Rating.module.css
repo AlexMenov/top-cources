@@ -1,0 +1,9 @@
+.rated {
+  fill: var(--primary);
+}
+.stars svg {
+  margin-right: 5px;
+}
+.editable {
+  cursor: pointer;
+}

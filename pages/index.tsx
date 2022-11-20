@@ -5,10 +5,12 @@ import { Htag } from '../components/Htag/Htag'
 import { Button } from '../components/Button/Button'
 import { Paragraph } from '../components/Paragraph/Paragraph'
 import { Tag } from '../components/Tag/Tag'
+import { Rating } from '../components/Rating/Rating'
 import { useState } from 'react'
 
 export default function Home() {
   const [count, setCount] = useState(0)
+  const [rating, setRating] = useState<number>(4)
   return (
     <div className={styles.container}>
       <Htag tag='h1'>{count}</Htag>
@@ -23,6 +25,7 @@ export default function Home() {
       <Tag size='S' color='green' href='/'>kjkldfjk</Tag>
       <Tag size='S' color='primary'>kjkldfjk</Tag>
       <Tag size='S' color='red'>kjkldfjk</Tag>
+      <Rating rating={rating} isEditable={true} setRating={setRating}></Rating>
     </div>
   )
 }
